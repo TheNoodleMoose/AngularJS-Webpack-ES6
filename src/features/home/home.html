@@ -1,6 +1,7 @@
 <div class="jumbotron">
-  <h1>Hello, {{ home.name }}</h1>
+  <greeting name="$ctrl.name"></greeting>
+  <h1>{{ $ctrl.name }}</h1>
 </div>
-
-<button class="btn btn-primary" ng-click="home.changeName()">Change</button>
-<button class="btn btn-danger" ng-click="home.randomName()">Change</button>
+<button class="btn btn-success" ui-sref="about">Go To About</button>
+<button class="btn btn-primary" ng-click="$ctrl.changeName()">Change</button>
+<button class="btn btn-danger" ng-click="$ctrl.randomName()">Change</button>

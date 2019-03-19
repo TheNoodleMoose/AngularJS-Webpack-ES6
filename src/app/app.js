@@ -4,7 +4,9 @@ import angular from "angular";
 import uirouter from "angular-ui-router";
 
 import routing from "./app.config";
-import home from "../features/home";
+import home from "../features/home/home.component.ts";
+import about from "../features/about/about.component.ts";
+import heroList from "../features/heroList/heroList.component.ts";
 
 import "../style/app.css";
 
@@ -22,12 +24,8 @@ class AppCtrl {
   }
 }
 
-const MODULE_NAME = "app";
-
-angular
-  .module(MODULE_NAME, [uirouter, home])
+export default angular
+  .module("app", [uirouter, home, about, heroList])
   .config(routing)
   .directive("app", app)
   .controller("AppCtrl", AppCtrl);
-
-export default MODULE_NAME;
